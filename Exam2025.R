@@ -319,6 +319,9 @@ glmm_cop_1 <- glmer(cop ~ fwl + tbl + sex + (1 | year),  ##BEST
                   data = all_data, 
                   family = binomial)
 summary(glmm_cop_1)
+install.packages("cardata")
+library(car)
+vif(glmm_cop_1)
 
 glmm_cop_2 <- glmer(cop ~ fwl + tbl + sex + (1 | year) + (1 | id), 
                     data = all_data, 
